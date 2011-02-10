@@ -1,0 +1,97 @@
+<!-- AUTOMATICALLY GENERATED FILE - DO NOT EDIT -->
+
+<def tag="card" for="Device">
+  <card class="device" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+    </header:>
+    <body: param>
+      <ht key="repair.collection.count" count="&this.repairs.size">
+         <count:repairs param/>
+      </ht>
+    </body:>
+  </card>
+</def>
+
+<def tag="card" for="DeviceAssignment">
+  <card class="device-assignment" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="Location">
+  <card class="location" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="Organization">
+  <card class="organization" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+    </header:>
+    <body: param>
+      <ht key="store.collection.count" count="&this.stores.size">
+         <count:stores param/>
+      </ht>
+    </body:>
+  </card>
+</def>
+
+<def tag="card" for="Repair">
+  <card class="repair" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="RepairAssignment">
+  <card class="repair-assignment" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="RepairOrder">
+  <card class="repair-order" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="Store">
+  <card class="store" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+    </header:>
+    <body: param>
+      <ht key="device.collection.count" count="&this.devices.size">
+         <count:devices param/>
+      </ht>
+    </body:>
+  </card>
+</def>
+
+<def tag="card" for="StoreAssignment">
+  <card class="store-assignment" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="User">
+  <card class="user" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+  </card>
+</def>
+

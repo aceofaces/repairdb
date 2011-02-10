@@ -1,0 +1,757 @@
+<!-- AUTOMATICALLY GENERATED FILE - DO NOT EDIT -->
+
+<!-- ====== Main Navigation ====== -->
+
+<def tag="main-nav">
+  <navigation class="main-nav" merge-attrs param="default">
+    <nav-item href="#{base_url}/">Home</nav-item>
+    <nav-item with="&Device"><ht key="device.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Organization"><ht key="organization.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Repair"><ht key="repair.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Store"><ht key="store.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+  </navigation>
+</def>
+
+
+
+
+<!-- ====== Device Pages ====== -->
+
+<def tag="index-page" for="Device">
+  <page merge title="#{ht 'device.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page device" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="device.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="device.collection.count" count="&this.size">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="device.actions.new">New Device</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Device">
+  <page merge title="#{ht 'device.new.title', :default=>[' New Device'] }">
+    <body: class="new-page device" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="device.new.heading">
+            New Device
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'device.actions.create', :default=>['Create Device']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Device">
+  <page merge title="#{ht 'device.show.title', :default=>['Device'] }">
+
+    <body: class="show-page device" param/>
+
+    <content: param>
+          <header param="content-header">
+            <a:store param="parent-link">&laquo; <ht key="device.actions.back_to_parent" parent="Store" name="&this">Back to <name/></ht></a:store>
+            <h2 param="heading">
+              <ht key="device.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="device.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit Device
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="make, model1, sn, notes, warranty, status, organization" param/>
+            <section param="collection-section">
+              <h3 param="collection-heading">
+                <ht key="repair.collection.heading" count="&this.repairs.count" >
+                  <human-collection-name collection="repairs" your/>
+                </ht>
+              </h3>
+
+              <collection:repairs param/>
+
+              <a:repairs action="new" if="&can_create?(@device.repairs)" param="new-link">
+                <ht key="repair.actions.new" count="1">
+                  New Repair
+                </ht>
+              </a:repairs>
+            </section>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Device">
+  <page merge title="#{ht 'device.edit.title', :default=>['Edit Device'] }">
+
+    <body: class="edit-page device" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="device.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit Device
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'device.actions.delete', :default=>['Remove This Device']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== Organization Pages ====== -->
+
+<def tag="index-page" for="Organization">
+  <page merge title="#{ht 'organization.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page organization" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="organization.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="organization.collection.count" count="&this.size">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="organization.actions.new">New Organization</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Organization">
+  <page merge title="#{ht 'organization.new.title', :default=>[' New Organization'] }">
+    <body: class="new-page organization" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="organization.new.heading">
+            New Organization
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'organization.actions.create', :default=>['Create Organization']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Organization">
+  <page merge title="#{ht 'organization.show.title', :default=>['Organization'] }">
+
+    <body: class="show-page organization" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="organization.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="organization.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit Organization
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="phone, contact, email" param/>
+            <section param="collection-section">
+              <h3 param="collection-heading">
+                <ht key="store.collection.heading" count="&this.stores.count" >
+                  <human-collection-name collection="stores" your/>
+                </ht>
+              </h3>
+
+              <collection:stores param/>
+            </section>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Organization">
+  <page merge title="#{ht 'organization.edit.title', :default=>['Edit Organization'] }">
+
+    <body: class="edit-page organization" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="organization.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit Organization
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'organization.actions.delete', :default=>['Remove This Organization']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== Repair Pages ====== -->
+
+<def tag="index-page" for="Repair">
+  <page merge title="#{ht 'repair.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page repair" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="repair.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="repair.collection.count" count="&this.size">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="repair.actions.new">New Repair</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Repair">
+  <page merge title="#{ht 'repair.new.title', :default=>[' New Repair'] }">
+    <body: class="new-page repair" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="repair.new.heading">
+            New Repair
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'repair.actions.create', :default=>['Create Repair']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Repair">
+  <page merge title="#{ht 'repair.show.title', :default=>['Repair'] }">
+
+    <body: class="show-page repair" param/>
+
+    <content: param>
+          <header param="content-header">
+            <a:device param="parent-link">&laquo; <ht key="repair.actions.back_to_parent" parent="Device" name="&this">Back to <name/></ht></a:device>
+            <h2 param="heading">
+              <ht key="repair.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="repair.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit Repair
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="date, store, ticket, problem, work, notes, status, store" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Repair">
+  <page merge title="#{ht 'repair.edit.title', :default=>['Edit Repair'] }">
+
+    <body: class="edit-page repair" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="repair.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit Repair
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'repair.actions.delete', :default=>['Remove This Repair']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+<def tag="new-for-device-page" polymorphic/>
+<def tag="new-for-device-page" for="Repair">
+  <page merge title="#{ht 'repair.new_for_owner.title', :default=>['New Repair for']} #{name :with => @device}">
+    <body: class="new-for-owner-page  repair" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="repair.new_for_owner.heading">
+            New Repair
+          </ht>
+        </h2>
+        <h3 param="subheading">
+          <ht key="repair.new_for_owner.subheading">
+            For:
+          </ht>
+          <a with="&@device"/>
+        </h3>
+      </header>
+
+      <section param="content-body">
+        <form owner="device" method="post" param>
+          <field-list: skip="device"/>
+          <submit: label="#{ht 'repair.actions.create', :default=>['Create Repair']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== Store Pages ====== -->
+
+<def tag="index-page" for="Store">
+  <page merge title="#{ht 'store.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page store" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="store.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="store.collection.count" count="&this.size">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="store.actions.new">New Store</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Store">
+  <page merge title="#{ht 'store.new.title', :default=>[' New Store'] }">
+    <body: class="new-page store" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="store.new.heading">
+            New Store
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'store.actions.create', :default=>['Create Store']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Store">
+  <page merge title="#{ht 'store.show.title', :default=>['Store'] }">
+
+    <body: class="show-page store" param/>
+
+    <content: param>
+          <header param="content-header">
+            <a:organization param="parent-link">&laquo; <ht key="store.actions.back_to_parent" parent="Organization" name="&this">Back to <name/></ht></a:organization>
+            <h2 param="heading">
+              <ht key="store.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="store.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit Store
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="phone, tz, contact, address1, address2, city, state, zip" param/>
+            <section param="collection-section">
+              <h3 param="collection-heading">
+                <ht key="device.collection.heading" count="&this.devices.count" >
+                  <human-collection-name collection="devices" your/>
+                </ht>
+              </h3>
+
+              <collection:devices param/>
+            </section>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Store">
+  <page merge title="#{ht 'store.edit.title', :default=>['Edit Store'] }">
+
+    <body: class="edit-page store" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="store.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit Store
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'store.actions.delete', :default=>['Remove This Store']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== User Pages ====== -->
+
+<def tag="index-page" for="User">
+  <page merge title="#{ht 'user.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page user" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="user.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="user.collection.count" count="&this.size">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+        <div param="new-form">
+          <h3 param="new-form-heading">
+            <ht key="user.form.new.heading">New User</ht>
+          </h3>
+          <form with="&@invalid_record || new_for_current_user(User)" param/>
+        </div>
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="User">
+  <page merge title="#{ht 'user.new.title', :default=>[' New User'] }">
+    <body: class="new-page user" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="user.new.heading">
+            New User
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'user.actions.create', :default=>['Create User']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="User">
+  <page merge title="#{ht 'user.show.title', :default=>['User'] }">
+
+    <body: class="show-page user" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="user.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="administrator" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="user.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit User
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="email_address, state" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="User">
+  <page merge title="#{ht 'user.edit.title', :default=>['Edit User'] }">
+
+    <body: class="edit-page user" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="user.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit User
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'user.actions.delete', :default=>['Remove This User']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="invite-page" polymorphic/>
+<def tag="invite-page" for="User">
+
+  <page title="#{ht 'user.invite.title', :default=>['Invite']}" merge>
+
+    <body: class="lifecycle-start-page invite-page" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="user.invite.heading">
+            Invite
+          </ht>
+        </h2>
+      </header>
+
+      <section param="content-body">
+        <invite-form param="form"/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+<def tag="accept-invitation-page" polymorphic/>
+<def tag="accept-invitation-page" for="User">
+  <page title="#{ht 'user.accept_invitation.title', :default=>['Accept Invitation']}" merge>
+
+    <body: class="lifecycle-transition-page accept-invitation-page" param/>
+
+    <content:>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="user.accept_invitation.heading">
+            Accept Invitation
+          </ht>
+        </h2>
+      </header>
+
+      <section param="content-body">
+        <accept-invitation-form param="form"/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+<def tag="reset-password-page" polymorphic/>
+<def tag="reset-password-page" for="User">
+  <page title="#{ht 'user.reset_password.title', :default=>['Reset Password']}" merge>
+
+    <body: class="lifecycle-transition-page reset-password-page" param/>
+
+    <content:>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="user.reset_password.heading">
+            Reset Password
+          </ht>
+        </h2>
+      </header>
+
+      <section param="content-body">
+        <reset-password-form param="form"/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
