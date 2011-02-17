@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110210165653) do
+ActiveRecord::Schema.define(:version => 20110216185532) do
 
   create_table "device_assignments", :force => true do |t|
     t.datetime "created_at"
@@ -72,13 +72,11 @@ ActiveRecord::Schema.define(:version => 20110210165653) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "device_id"
-    t.string   "store"
     t.string   "device"
-    t.integer  "store_id"
+    t.string   "origin"
   end
 
   add_index "repairs", ["device_id"], :name => "index_repairs_on_device_id"
-  add_index "repairs", ["store_id"], :name => "index_repairs_on_store_id"
 
   create_table "store_assignments", :force => true do |t|
     t.datetime "created_at"
@@ -86,6 +84,23 @@ ActiveRecord::Schema.define(:version => 20110210165653) do
   end
 
   create_table "stores", :force => true do |t|
+    t.integer  "organization_id"
+    t.string   "name"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "phone"
+    t.string   "tz"
+    t.string   "contact"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "stores", ["organization_id"], :name => "index_stores_on_organization_id"
+
+  create_table "stores_old", :force => true do |t|
     t.string   "phone"
     t.string   "tz"
     t.string   "contact"
@@ -99,8 +114,6 @@ ActiveRecord::Schema.define(:version => 20110210165653) do
     t.string   "state"
     t.string   "zip"
   end
-
-  add_index "stores", ["organization_id"], :name => "index_stores_on_organization_id"
 
   create_table "users", :force => true do |t|
     t.string   "crypted_password",          :limit => 40

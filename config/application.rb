@@ -42,6 +42,6 @@ module Repairdb
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
 
-    config.hobo.app_name = "Mix & Burn Support WebApp"
+    config.hobo.app_name = "Mix & Burn Support & Repair Database"
   end
 end

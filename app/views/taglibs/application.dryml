@@ -8,6 +8,17 @@
 
 <set-theme name="clean"/>
 
+<def tag="main-nav">
+  <navigation class="main-nav" merge-attrs param="default">
+    <nav-item href="#{base_url}/">Home</nav-item>
+    <nav-item with="&Repair"><ht key="repair.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Device"><ht key="device.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Store"><ht key="store.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Organization"><ht key="organization.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+  </navigation>
+</def>
+
+
 <extend tag="page">
   <old-page merge>
     <footer:>
@@ -16,4 +27,8 @@
       </a>
     </footer:>
   </old-page>
+</extend>
+
+<extend tag="select-one">
+ <old-select-one limit="1000" merge/>
 </extend>

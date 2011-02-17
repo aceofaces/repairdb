@@ -8,7 +8,7 @@ class Store < ActiveRecord::Base
     tz           :string, :required
     contact      :string
     address1     :string, :required
-    address2     :string, :required
+    address2     :string
     city         :string, :required
     state        :string, :required
     zip          :string, :required

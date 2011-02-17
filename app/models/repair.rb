@@ -5,7 +5,7 @@ class Repair < ActiveRecord::Base
   fields do
     device  :string, :required
     date    :date, :required
-    store   :string, :required
+    origin  :string
     ticket  :string
     problem :text
     work    :text
@@ -20,8 +20,6 @@ class Repair < ActiveRecord::Base
 
   belongs_to :device
   validates_presence_of :device
-  belongs_to :store
-  validates_presence_of :store
 
   # --- Permissions --- #
 
