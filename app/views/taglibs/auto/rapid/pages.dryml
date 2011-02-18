@@ -101,7 +101,7 @@
           </header>
 
           <section param="content-body">
-            <field-list fields="make, model1, sn, notes, warranty, organization" param/>
+            <field-list fields="make, model1, sn, notes, warranty, status, organization" param/>
             <section param="collection-section">
               <h3 param="collection-heading">
                 <ht key="repair.collection.heading" count="&this.repairs.count" >

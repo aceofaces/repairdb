@@ -1,0 +1,40 @@
+<index-page/>
+<def tag="index-page" for="Organization">
+  <page merge title="#{ht 'organization.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page organization" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="organization.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="organization.actions.new">New Organization</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+<def tag="card" for="Organization">
+  <card class="organization" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+    <body: param>
+    </body:>
+  </card>
+</def>

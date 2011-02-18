@@ -13,14 +13,6 @@
   </card>
 </def>
 
-<def tag="card" for="DeviceAssignment">
-  <card class="device-assignment" param="default" merge>
-    <header: param>
-      <h4 param="heading"><name/></h4>
-    </header:>
-  </card>
-</def>
-
 <def tag="card" for="Location">
   <card class="location" param="default" merge>
     <header: param>
@@ -50,22 +42,6 @@
   </card>
 </def>
 
-<def tag="card" for="RepairAssignment">
-  <card class="repair-assignment" param="default" merge>
-    <header: param>
-      <h4 param="heading"><name/></h4>
-    </header:>
-  </card>
-</def>
-
-<def tag="card" for="RepairOrder">
-  <card class="repair-order" param="default" merge>
-    <header: param>
-      <h4 param="heading"><name/></h4>
-    </header:>
-  </card>
-</def>
-
 <def tag="card" for="Store">
   <card class="store" param="default" merge>
     <header: param>
@@ -76,14 +52,6 @@
          <count:devices param/>
       </ht>
     </body:>
-  </card>
-</def>
-
-<def tag="card" for="StoreAssignment">
-  <card class="store-assignment" param="default" merge>
-    <header: param>
-      <h4 param="heading"><name/></h4>
-    </header:>
   </card>
 </def>
 
