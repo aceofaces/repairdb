@@ -84,7 +84,6 @@
 
     <content: param>
           <header param="content-header">
-            <a:store param="parent-link">&laquo; <ht key="device.actions.back_to_parent" parent="Store" name="&this">Back to <name/></ht></a:store>
             <h2 param="heading">
               <ht key="device.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
                 <name/>
@@ -101,7 +100,7 @@
           </header>
 
           <section param="content-body">
-            <field-list fields="make, model1, sn, notes, warranty, status, organization" param/>
+            <field-list fields="make, model1, sn, notes, warranty, status, organization, store" param/>
             <section param="collection-section">
               <h3 param="collection-heading">
                 <ht key="repair.collection.heading" count="&this.repairs.count" >
@@ -366,7 +365,7 @@
           </header>
 
           <section param="content-body">
-            <field-list fields="date, origin, ticket, problem, work, notes, status" param/>
+            <field-list fields="date, store, ticket, problem, work, notes, status" param/>
           </section>
     </content:>
 

@@ -28,7 +28,7 @@
     <input type="hidden" name="key" value="&this.lifecycle.provided_key" if="&this.lifecycle.provided_key"/>
     <field-list fields="password, password_confirmation" param/>
     <div param="actions">
-      <submit label="#{ht 'user.actions.accept_invitation', :default=>['Accept Invitation']}" param/><or-cancel param="cancel"/>
+      <submit label="#{t 'activerecord.attributes.user.lifecycle.transitions.accept_invitation', :default=>['Accept Invitation']}" param/><or-cancel param="cancel"/>
     </div>
   </form>
 </def>
@@ -39,7 +39,7 @@
     <input type="hidden" name="key" value="&this.lifecycle.provided_key" if="&this.lifecycle.provided_key"/>
     <field-list fields="password, password_confirmation" param/>
     <div param="actions">
-      <submit label="#{ht 'user.actions.reset_password', :default=>['Reset Password']}" param/><or-cancel param="cancel"/>
+      <submit label="#{t 'activerecord.attributes.user.lifecycle.transitions.reset_password', :default=>['Reset Password']}" param/><or-cancel param="cancel"/>
     </div>
   </form>
 </def>

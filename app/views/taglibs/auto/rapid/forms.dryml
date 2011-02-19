@@ -27,7 +27,7 @@
 <def tag="form" for="Repair">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="device, date, origin, ticket, problem, work, notes, status, device" param/>
+    <field-list fields="device, date, store, ticket, problem, work, notes, status, device" param/>
     <div param="actions">
       <submit label="#{ht 'repair.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>
@@ -76,7 +76,7 @@
     <input type="hidden" name="key" value="&this.lifecycle.provided_key" if="&this.lifecycle.provided_key"/>
     <field-list fields="password, password_confirmation" param/>
     <div param="actions">
-      <submit label="#{ht 'user.actions.accept_invitation', :default=>['Accept Invitation']}" param/><or-cancel param="cancel"/>
+      <submit label="#{t 'activerecord.attributes.user.lifecycle.transitions.accept_invitation', :default=>['Accept Invitation']}" param/><or-cancel param="cancel"/>
     </div>
   </form>
 </def>
@@ -87,7 +87,7 @@
     <input type="hidden" name="key" value="&this.lifecycle.provided_key" if="&this.lifecycle.provided_key"/>
     <field-list fields="password, password_confirmation" param/>
     <div param="actions">
-      <submit label="#{ht 'user.actions.reset_password', :default=>['Reset Password']}" param/><or-cancel param="cancel"/>
+      <submit label="#{t 'activerecord.attributes.user.lifecycle.transitions.reset_password', :default=>['Reset Password']}" param/><or-cancel param="cancel"/>
     </div>
   </form>
 </def>

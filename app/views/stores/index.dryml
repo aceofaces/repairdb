@@ -32,7 +32,7 @@
 <index-page >
  <collection: replace>
   <div>
-   <table-plus fields="this,phone,tz,contact,city,state,devices.count" />
+   <table-plus fields="this,phone,tz,contact,city,state" />
   </div>
  </collection:>
 </index-page>

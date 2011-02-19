@@ -6,6 +6,9 @@ class RepairAssignment < ActiveRecord::Base
     timestamps
   end
 
+#  belongs_to :repair
+#  belongs_to :device
+
   # --- Permissions --- #
 
   def create_permitted?

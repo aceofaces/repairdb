@@ -16,9 +16,8 @@ class Device < ActiveRecord::Base
       make + " " + model1 + " " + sn
   end 
 
-  has_many :repairs#, :through => :repair_assignments
- # has_many :repair_assignments, :dependent => :destroy
   belongs_to :store
+  has_many :repairs
   validates_presence_of :store
   belongs_to :organization
   validates_presence_of :organization

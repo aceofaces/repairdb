@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110217235028) do
+ActiveRecord::Schema.define(:version => 20110218070245) do
 
   create_table "devices", :force => true do |t|
     t.datetime "updated_at"
@@ -42,6 +42,11 @@ ActiveRecord::Schema.define(:version => 20110217235028) do
     t.datetime "updated_at"
   end
 
+  create_table "repair_assignments", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "repairs", :force => true do |t|
     t.date     "date"
     t.string   "ticket"
@@ -53,7 +58,7 @@ ActiveRecord::Schema.define(:version => 20110217235028) do
     t.datetime "updated_at"
     t.integer  "device_id"
     t.string   "device"
-    t.string   "origin"
+    t.string   "store"
   end
 
   add_index "repairs", ["device_id"], :name => "index_repairs_on_device_id"

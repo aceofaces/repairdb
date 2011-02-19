@@ -10,7 +10,7 @@
   <form merge param="default">
     <error-messages param/>
     <field-list fields="make, model1, sn, notes, warranty, status, organization, store" param/>
-     <more-stores/>
+    <more-stores/>
     <div param="actions">
       <submit label="#{ht 'device.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>

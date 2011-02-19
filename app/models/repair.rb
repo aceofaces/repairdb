@@ -5,18 +5,18 @@ class Repair < ActiveRecord::Base
   fields do
     device  :string, :required
     date    :date, :required
-    origin  :string
-    ticket  :string
+    store   :string, :required
+    ticket  :string, :required
     problem :text
     work    :text
     notes   :text
-    status  enum_string(:Ready_To_Deploy, :Internal_Use_Only, :Awaiting_Repair)
+    status  enum_string(:Ready_To_Deploy, :Internal_Use_Only, :Awaiting_Repair, :Scrap)
     timestamps
   end
 
-#  def name
-#    "Repair from " + store + " on " + date
-#  end
+  def name
+    "Repair from " + store + " for ticket # " + ticket
+  end
 
   belongs_to :device
   validates_presence_of :device

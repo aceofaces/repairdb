@@ -6,7 +6,7 @@
 <include src="taglibs/auto/rapid/pages"/>
 <include src="taglibs/auto/rapid/forms"/>
 
-<set-theme name="clean"/>
+<set-theme name="clean-sidemenu"/>
 
 <def tag="main-nav">
   <navigation class="main-nav" merge-attrs param="default">
