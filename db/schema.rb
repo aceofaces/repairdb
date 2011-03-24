@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110218070245) do
+ActiveRecord::Schema.define(:version => 20110324122846) do
 
   create_table "devices", :force => true do |t|
     t.datetime "updated_at"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20110218070245) do
     t.integer  "store_id"
     t.integer  "organization_id"
     t.string   "status"
+    t.string   "name"
   end
 
   add_index "devices", ["organization_id"], :name => "index_devices_on_organization_id"

@@ -5,18 +5,14 @@
 Repairdb::Application.routes.draw do
 
 
-  # Resource routes for controller "repairs"
-  get 'repairs(.:format)' => 'repairs#index', :as => 'repairs'
-  get 'repairs/new(.:format)', :as => 'new_repair'
-  get 'repairs/:id/edit(.:format)' => 'repairs#edit', :as => 'edit_repair'
-  get 'repairs/:id(.:format)' => 'repairs#show', :as => 'repair', :constraints => { :id => %r([^/.?]+) }
-  post 'repairs(.:format)' => 'repairs#create', :as => 'create_repair'
-  put 'repairs/:id(.:format)' => 'repairs#update', :as => 'update_repair', :constraints => { :id => %r([^/.?]+) }
-  delete 'repairs/:id(.:format)' => 'repairs#destroy', :as => 'destroy_repair', :constraints => { :id => %r([^/.?]+) }
-
-  # Owner routes for controller "repairs"
-  get 'devices/:device_id/repairs/new(.:format)' => 'repairs#new_for_device', :as => 'new_repair_for_device'
-  post 'devices/:device_id/repairs(.:format)' => 'repairs#create_for_device', :as => 'create_repair_for_device'
+  # Resource routes for controller "stores"
+  get 'stores(.:format)' => 'stores#index', :as => 'stores'
+  get 'stores/new(.:format)', :as => 'new_store'
+  get 'stores/:id/edit(.:format)' => 'stores#edit', :as => 'edit_store'
+  get 'stores/:id(.:format)' => 'stores#show', :as => 'store', :constraints => { :id => %r([^/.?]+) }
+  post 'stores(.:format)' => 'stores#create', :as => 'create_store'
+  put 'stores/:id(.:format)' => 'stores#update', :as => 'update_store', :constraints => { :id => %r([^/.?]+) }
+  delete 'stores/:id(.:format)' => 'stores#destroy', :as => 'destroy_store', :constraints => { :id => %r([^/.?]+) }
 
 
   # Lifecycle routes for controller "users"
@@ -51,14 +47,18 @@ Repairdb::Application.routes.draw do
   delete 'devices/:id(.:format)' => 'devices#destroy', :as => 'destroy_device', :constraints => { :id => %r([^/.?]+) }
 
 
-  # Resource routes for controller "stores"
-  get 'stores(.:format)' => 'stores#index', :as => 'stores'
-  get 'stores/new(.:format)', :as => 'new_store'
-  get 'stores/:id/edit(.:format)' => 'stores#edit', :as => 'edit_store'
-  get 'stores/:id(.:format)' => 'stores#show', :as => 'store', :constraints => { :id => %r([^/.?]+) }
-  post 'stores(.:format)' => 'stores#create', :as => 'create_store'
-  put 'stores/:id(.:format)' => 'stores#update', :as => 'update_store', :constraints => { :id => %r([^/.?]+) }
-  delete 'stores/:id(.:format)' => 'stores#destroy', :as => 'destroy_store', :constraints => { :id => %r([^/.?]+) }
+  # Resource routes for controller "repairs"
+  get 'repairs(.:format)' => 'repairs#index', :as => 'repairs'
+  get 'repairs/new(.:format)', :as => 'new_repair'
+  get 'repairs/:id/edit(.:format)' => 'repairs#edit', :as => 'edit_repair'
+  get 'repairs/:id(.:format)' => 'repairs#show', :as => 'repair', :constraints => { :id => %r([^/.?]+) }
+  post 'repairs(.:format)' => 'repairs#create', :as => 'create_repair'
+  put 'repairs/:id(.:format)' => 'repairs#update', :as => 'update_repair', :constraints => { :id => %r([^/.?]+) }
+  delete 'repairs/:id(.:format)' => 'repairs#destroy', :as => 'destroy_repair', :constraints => { :id => %r([^/.?]+) }
+
+  # Owner routes for controller "repairs"
+  get 'devices/:device_id/repairs/new(.:format)' => 'repairs#new_for_device', :as => 'new_repair_for_device'
+  post 'devices/:device_id/repairs(.:format)' => 'repairs#create_for_device', :as => 'create_repair_for_device'
 
 
   # Resource routes for controller "organizations"

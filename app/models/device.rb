@@ -3,6 +3,7 @@ class Device < ActiveRecord::Base
   hobo_model # Don't put anything above this
 
   fields do
+    name     :string, :required
     make     :string, :required
     model1   :string, :required
     sn       :string, :required

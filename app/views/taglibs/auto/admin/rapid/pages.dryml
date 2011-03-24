@@ -27,7 +27,7 @@
         </h2>
 
         <p param="count" if>
-          <ht key="user.collection.count" count="&this.size">
+          <ht key="user.collection.count" count="&collection_count">
             <count summary/>
           </ht>
         </p>

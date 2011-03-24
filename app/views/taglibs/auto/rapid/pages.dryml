@@ -30,7 +30,7 @@
         </h2>
 
         <p param="count" if>
-          <ht key="device.collection.count" count="&this.size">
+          <ht key="device.collection.count" count="&collection_count">
             <count summary/>
           </ht>
         </p>
@@ -165,7 +165,7 @@
         </h2>
 
         <p param="count" if>
-          <ht key="organization.collection.count" count="&this.size">
+          <ht key="organization.collection.count" count="&collection_count">
             <count summary/>
           </ht>
         </p>
@@ -294,7 +294,7 @@
         </h2>
 
         <p param="count" if>
-          <ht key="repair.collection.count" count="&this.size">
+          <ht key="repair.collection.count" count="&collection_count">
             <count summary/>
           </ht>
         </p>
@@ -447,7 +447,7 @@
         </h2>
 
         <p param="count" if>
-          <ht key="store.collection.count" count="&this.size">
+          <ht key="store.collection.count" count="&collection_count">
             <count summary/>
           </ht>
         </p>
@@ -577,7 +577,7 @@
         </h2>
 
         <p param="count" if>
-          <ht key="user.collection.count" count="&this.size">
+          <ht key="user.collection.count" count="&collection_count">
             <count summary/>
           </ht>
         </p>
