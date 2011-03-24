@@ -13,10 +13,6 @@ class Device < ActiveRecord::Base
     timestamps
   end
 
-  def name
-      make + " " + model1 + " " + sn
-  end 
-
   belongs_to :store
   has_many :repairs
   validates_presence_of :store
